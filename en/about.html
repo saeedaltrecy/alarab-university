@@ -49,21 +49,43 @@
 <body class="ltr-dir bg-slate-50 text-slate-800">
    <header class="header-glass sticky top-0 z-50">
         <nav aria-label="Global" class="container mx-auto max-w-7xl py-4 lg:py-6 nav-shell space-y-4">
-            <div class="flex items-center justify-between gap-4 py-4">
-                <!-- Logo -->
-                <div class="flex items-center gap-4">
+            <div class="flex items-center justify-between gap-4 py-4 relative">
+
+                <!-- Logo Section -->
+                <div class="flex items-center gap-4 lg:flex-1 lg:justify-center order-2 lg:order-2 z-10">
                     <a href="index.html"
-                        class="flex items-center gap-3 -m-2 p-2 rounded-full logo-link ring-1 ring-transparent">
+                        class="flex items-center gap-3 -m-2 p-2 logo-link ring-1 ring-transparent hover:scale-105 transition-transform duration-300">
                         <span class="sr-only">Back to Home</span>
-                        <img src="../img/logo.png" alt="University Logo" width="166" height="48" class="h-12 w-auto drop-shadow-sm">
-                        <div class="hidden sm:flex flex-col pr-2">
-                        </div>
+                        <img src="../img/logo.png" alt="University Logo" width="166" height="48" class="h-12 w-auto lg:h-14 drop-shadow-sm">
                     </a>
                 </div>
+                
+                <!-- Desktop Search (Expandable) -->
+                 <div class="hidden lg:flex items-center justify-start order-1">
+                    <div class="relative flex items-center" id="desktop-search-container">
+                        <!-- Search Icon Trigger -->
+                        <button type="button" id="desktop-search-btn" class="header-search-trigger">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        
+                        <!-- Expandable Search Input -->
+                        <div class="header-search-wrapper" id="desktop-search-input-wrapper">
+                             <div class="header-search-icon">
+                                <i class="fas fa-search"></i>
+                             </div>
+                             <input type="text" 
+                                placeholder="Search website..." 
+                                class="header-search-input">
+                             <!-- Close Search Button (X) -->
+                             <button type="button" id="desktop-search-close" class="header-search-close">
+                                <i class="fas fa-times text-sm"></i>
+                             </button>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Mobile Tools -->
-                <div class="flex items-center gap-3 lg:hidden">
-                    <!-- Menu Button -->
+                <!-- Mobile Menu Toggle (Right on Mobile in LTR?) -->
+                <div class="flex items-center gap-3 lg:hidden order-3">
                     <button type="button" id="mobile-nav-toggle"
                         class="inline-flex items-center justify-center rounded-full bg-primary px-3.5 py-2 text-white shadow-soft transition hover-bg-primary-dark mobile-nav-btn"
                         aria-label="Open Menu">
@@ -71,13 +93,13 @@
                     </button>
                 </div>
 
-                <!-- Right Side Menu -->
-                <div class="hidden lg:flex lg:items-center lg:gap-4 nav-right">
+                 <!-- Desktop Actions (Right Desktop) -->
+                <div class="hidden lg:flex items-center justify-end gap-4 nav-right   order-3">
                     <!-- Language Button -->
                     <div class="relative group" style="z-index: 110;">
                         <button
-                            class="flex items-center gap-x-2 text-sm font-semibold language-btn link-hover-effect px-3 py-2 rounded-full bg-primary-soft text-primary"
-                            style="z-index: 110;">
+                            class="flex items-center gap-x-2 text-sm font-semibold language-btn link-hover-effect px-3 py-2 bg-primary-soft text-primary"
+                            style="z-index: 1001;">
                             <i class="fas fa-language"></i>
                             English
                             <i class="fas fa-chevron-down text-xs dropdown-icon"></i>
@@ -85,19 +107,19 @@
 
                         <!-- Language Dropdown -->
                         <div
-                            class="dropdown-menu language-dropdown absolute top-full left-0 z-[110] mt-3 w-40 rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 backdrop-blur">
+                            class="dropdown-menu language-dropdown absolute top-full left-0 z-[1001] mt-3 w-40 bg-white shadow-xl ring-1 ring-slate-200/70 backdrop-blur">
                             <div class="py-2">
                                 <a href="../about.html"
-                                    class="block px-4 py-2 text-sm font-medium text-primary hover-bg-primary-tint hover-text-primary-dark link-hover-effect">العربية</a>
+                                    class="block px-4 py-2 text-sm font-medium text-primary hover-bg-primary-tint hover-text-primary-dark">العربية</a>
                                 <a href="about.html"
-                                    class="block px-4 py-2 text-sm font-medium text-primary hover-bg-primary-tint hover-text-primary-dark link-hover-effect">English</a>
+                                    class="block px-4 py-2 text-sm font-medium text-primary hover-bg-primary-tint hover-text-primary-dark">English</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Admission Button -->
                     <a href="../admission-apply.html"
-                        class="glass-btn px-4 py-2.5 text-sm font-semibold text-primary shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition rounded-full solution-btn">
+                        class="glass-btn px-6 py-2.5 text-sm font-semibold text-primary shadow-soft hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-all duration-300 solution-btn bg-white border border-slate-100">
                         Admission
                     </a>
                 </div>
@@ -127,13 +149,13 @@
                         </div>
                         <ul class="nav-card__list nav-card__list--two">
                             <li><a href="../college-medicine.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Medicine & Health Sciences</a></li>
+                                        alt="" class="nav-sub-link-icon">College of Medicine & Health Sciences</a></li>
                             <li><a href="../college-dentistry.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Dentistry</a></li>
+                                        alt="" class="nav-sub-link-icon">College of Dentistry</a></li>
                             <li><a href="../collge-engineering.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Engineering & IT</a></li>
+                                        alt="" class="nav-sub-link-icon">College of Engineering & IT</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Administrative Sciences</a>
+                                        class="nav-sub-link-icon">College of Administrative Sciences</a>
                             </li>
                         </ul>
                     </div>
@@ -154,7 +176,7 @@
                         </div>
                         <ul class="nav-card__list nav-card__list--two">
                             <li><a href="../center-academic-development.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Academic Development & Quality</a></li>
+                                        class="nav-sub-link-icon">Academic Development & Quality Center</a></li>
                             <li><a href="../unit-academic-advising.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
                                         class="nav-sub-link-icon">Academic Advising Unit</a>
                             </li>
@@ -179,35 +201,35 @@
                         </div>
                         <ul class="nav-card__list nav-card__list--multi">
                             <li><a href="../program-dentistry.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Dental Medicine & Surgery</a></li>
+                                        alt="" class="nav-sub-link-icon">Bachelor of Oral & Dental Medicine & Surgery</a></li>
                             <li><a href="../program-medical-labs.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Medical Laboratories</a></li>
+                                        alt="" class="nav-sub-link-icon">Bachelor of Medical Laboratories</a></li>
                             <li><a href="../program-pharmacy.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">Pharmacy</a></li>
+                                        alt="" class="nav-sub-link-icon">Bachelor of Pharmacy</a></li>
                             <li><a href="../program-medicine.html" class="nav-sub-link"><img src="../img/about-img.png"
-                                        alt="" class="nav-sub-link-icon">General Medicine & Surgery</a></li>
+                                        alt="" class="nav-sub-link-icon">Bachelor of Medicine & Surgery</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Audiology & Speech</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Audiology & Speech</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Physical Therapy</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Physical Therapy</a></li>
                             <li><a href="../program-internship-dentistry.html" class="nav-sub-link"><img
                                         src="../img/about-img.png" alt="" class="nav-sub-link-icon">Dental Internship Program</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Information Technology</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Information Technology</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Mining Engineering</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Mining Engineering</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Interior Design Engineering</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Interior Design Engineering</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Civil Engineering</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Civil Engineering</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Artificial Intelligence</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Artificial Intelligence</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Architectural Engineering</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Architecture</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Accounting</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Accounting</a></li>
                             <li><a href="../index.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Business Administration</a></li>
+                                        class="nav-sub-link-icon">Bachelor of Business Administration</a></li>
                         </ul>
                     </div>
                 </li>
@@ -234,12 +256,12 @@
                             <li><a href="../university-calendar.html" class="nav-sub-link"><img src="../img/about-img.png"
                                         alt="" class="nav-sub-link-icon">University Calendar</a></li>
                             <li><a href="../regulations.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Regulations</a></li>
+                                        class="nav-sub-link-icon">Regulations & Systems</a></li>
                             <li><a href="../regulations.html#forms" class="nav-sub-link"><img src="../img/about-img.png"
                                         alt="" class="nav-sub-link-icon">Forms</a>
                             </li>
                             <li><a href="../graduates.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Graduates</a></li>
+                                        class="nav-sub-link-icon">Alumni</a></li>
                         </ul>
                     </div>
                 </li>
@@ -270,7 +292,7 @@
                 <li class="relative group nav-dropdown">
                     <button type="button"
                         class="nav-link flex items-center gap-2 text-sm font-semibold text-ink-muted hover-text-primary transition link-hover-effect">
-                        University Magazine
+                        University Journal
                         <i class="fas fa-chevron-down text-xs dropdown-icon"></i>
                     </button>
                     <div class="dropdown-menu dropdown-panel nav-card">
@@ -278,11 +300,11 @@
                             <div class="nav-card__icon">
                                 <i class="fas fa-book-open"></i>
                             </div>
-                            <h3>University Magazine</h3>
+                            <h3>University Journal</h3>
                         </div>
                         <ul class="nav-card__list">
                             <li><a href="../magazine-medical-sciences.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Arab Journal for Medical Sciences</a></li>
+                                        class="nav-sub-link-icon">Arab Journal of Medical Sciences</a></li>
                         </ul>
                     </div>
                 </li>
@@ -298,19 +320,14 @@
                             <div class="nav-card__icon">
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
-                            <h3>Conferences</h3>
+                            <h3>Conference Types</h3>
                         </div>
                         <ul class="nav-card__list nav-card__list--two">
-                            <li><a href="../conference-cancer.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">International Cancer Conference</a></li>
-                            <li><a href="../conference-patient-safety.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">2nd Int. Medical Conf. on Patient Safety</a></li>
-                            <li><a href="../conference-medical-education.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">3rd Int. Medical Conf. on Medical Education</a></li>
-                            <li><a href="../conference-trauma-care.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">4th Int. Medical Conf. on Trauma Care</a></li>
-                            <li><a href="../conference-dentistry.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">1st Int. Dental Conference</a></li>
+                             
+                            <li><a href="../medical-conferences.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
+                                        class="nav-sub-link-icon"> Medical Conferences</a></li>
+                            <li><a href="../dental-conference.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
+                                        class="nav-sub-link-icon"> Dental Conferences</a></li>
                         </ul>
                     </div>
                 </li>
@@ -332,14 +349,13 @@
                             <li><a href="../lectures.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
                                         class="nav-sub-link-icon">Lectures</a></li>
                             <li><a href="../news-reports.html" class="nav-sub-link"><img src="../img/about-img.png" alt=""
-                                        class="nav-sub-link-icon">Video Reports</a></li>
+                                        class="nav-sub-link-icon">Video News Reports</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </nav>
     </header>
-
 
     <!-- Mobile Navigation Menu -->
     <div id="mobile-nav-menu" class="fixed inset-0 z-50 hidden lg:hidden mobile-nav-panel">
@@ -930,3 +946,4 @@
 </body>
 
 </html>
+
